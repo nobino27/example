@@ -1,6 +1,4 @@
-package com.stu.zuul_eureka;
-
-import com.netflix.zuul.context.RequestContext;
+package hello;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -20,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT, classes = GatewayApplication.class)
 public class GatewayApplicationTest {
 
     @Autowired
@@ -37,11 +34,6 @@ public class GatewayApplicationTest {
     @AfterClass
     public static void closeBookService() {
         bookService.close();
-    }
-
-    @Before
-    public void setup() {
-        RequestContext.testSetCurrentContext(new RequestContext());
     }
 
     @Test
